@@ -1,0 +1,17 @@
+# OS X
+.DS_Store
+
+
+# Xcode
+## *.xcodeproj/xcuserdata/*.xcuserdatad/
+xcuserdata/
+## Build file
+build/
+
+# xcworkspace
+*.xcworkspace
+
+# Bundler
+.bundle
+
+
