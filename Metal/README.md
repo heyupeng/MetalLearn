@@ -1,15 +1,15 @@
 # Metal 入门的那些事
 
+[Metal Programming Guide]
+
 ## 图形渲染
 
-[MTLRenderCommandEncoder](https://developer.apple.com/library/archive/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Render-Ctx/Render-Ctx.html#//apple_ref/doc/uid/TP40014221-CH7-SW1)
-
-MTLRenderCommandEncoder命令描述图形渲染管道
+MTLRenderCommandEncoder指令描述图形渲染管道
 ![Metal图形绘制管道](https://developer.apple.com/library/archive/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Art/gfx-pipeline_2x.png)
 
 ### 创建和使用渲染命令编码器
 
-要创建、初始化和使用单个渲染命令编码器`MTLRenderCommandEncoder`的几个操作：
+创建、初始化和使用单个渲染命令编码器`MTLRenderCommandEncoder`的几个操作：
 * 创建MTLRenderPassDescriptor对象，以定义作为该渲染过程的命令缓冲区中图形命令的渲染目标的附件集合。通常，只需创建一次MTLRenderPassDescriptor对象，并在每次应用程序渲染帧时重用它。
 * 创建MTLRenderCommandEncoder对象, 通过使用指定的渲染过程描述符调用renderCommandEncoderWithDescriptor:MTLCommandBuffer的方法来创建。
 * 创建MTLRenderPipelineState对象，以定义一个或多个绘制调用的图形渲染管道的状态（包括着色器、混合、多重采样和可见性测试）。若要使用此渲染管道状态，调用MTLRenderCommandEncoder的setRenderPipelineState:方法。
@@ -18,7 +18,17 @@ MTLRenderCommandEncoder命令描述图形渲染管道
 * 最后，调用MTLRenderCommandEncoder方法来绘制图形原语。
 
 ### 创建渲染管道状态
-![sd](https://developer.apple.com/library/archive/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Art/PipelineState_2x.png)
+
+若要使用MTLRenderCommandEncoder对象对渲染命令进行编码，必须首先指定MTLRenderPipelineState对象以定义任何绘制调用的图形状态。渲染管道状态对象是一个长寿命的持久对象，可以在渲染命令编码器外部创建、提前缓存，并跨多个渲染命令编码器重用。在描述同一组图形状态时，重用先前创建的渲染管道状态对象可以避免昂贵的操作，这些操作会重新计算指定状态并将其转换为GPU命令。
+
+渲染管道状态是不可变的对象。要创建渲染管道状态，首先创建并配置一个可变的MTLRenderPipelineDescriptor对象，该对象描述渲染管道状态的属性。然后，使用描述符创建MTLRenderPipelineState对象。
+
+#### 创建和配置渲染管道描述符
+要创建渲染管道状态，请首先创建一个MTLRenderPipelineDescriptor对象，该对象具有描述要在渲染过程中使用的图形渲染管道状态的属性，如图5-2所示。新MTLRenderPipelineDescriptor对象的colorAttachments属性包含一个MTLRenderPipelineColorAttachmentDescriptor对象数组，每个描述符表示一个颜色附件状态，指定该附件的混合操作和系数，如在渲染管道附件描述符中配置混合中所述。==附件描述符还指定附件的像素格式，该格式必须与渲染管道描述符纹理的像素格式与相应的附件索引相匹配，否则将发生错误。==
+
+图5-2 从描述符创建渲染管道状态
+
+![渲染管道状态](https://developer.apple.com/library/archive/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Art/PipelineState_2x.png)
 
 ## 三维变换
 
@@ -208,3 +218,14 @@ func buildDepthTexture(drawableSize: CGSize) {
     matrix = GLKMatrix4Multiply(projectionMatrix, matrix)
 ```
  
+
+
+我经常去的几个网站[Google][1]、[Leanote][2]。
+
+[1]:http://www.google.com "Google"
+[2]:http://www.leanote.com "Leanote"
+
+
+[Metal Programming Guide]: https://developer.apple.com/library/archive/documentation/Miscellaneous/Conceptual/MetalProgrammingGuide/Render-Ctx/Render-Ctx.html#//apple_ref/doc/uid/TP40014221-CH7-SW1
+
+[MTLRenderCommandEncoder]: https://developer.apple.com/documentation/metal/mtlrendercommandencoder
