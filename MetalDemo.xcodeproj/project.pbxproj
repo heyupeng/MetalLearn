@@ -21,6 +21,11 @@
 		B83FDD4826A58B08003A8FD0 /* Image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B83FDD4226A58B08003A8FD0 /* Image2.jpg */; };
 		B83FDD4926A58B08003A8FD0 /* Image3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B83FDD4326A58B08003A8FD0 /* Image3.jpg */; };
 		B83FDD4B26A58C5E003A8FD0 /* downsample.metal in Sources */ = {isa = PBXBuildFile; fileRef = B83FDD4A26A58C5E003A8FD0 /* downsample.metal */; };
+		B875DF8126AE8F9B000BE3F7 /* kloppenheim_06.png in Resources */ = {isa = PBXBuildFile; fileRef = B875DF8026AE8F9B000BE3F7 /* kloppenheim_06.png */; };
+		B87B159526B3BE6500F72399 /* MemoryUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B159426B3AAB000F72399 /* MemoryUtility.swift */; };
+		B87B159826B3E8AB00F72399 /* AAPLUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = B87B159626B3E8AB00F72399 /* AAPLUtility.mm */; };
+		B87B159B26B3E8CA00F72399 /* AAPLMathUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B87B159A26B3E8CA00F72399 /* AAPLMathUtilities.m */; };
+		B87B159F26B3EAF600F72399 /* CTMFloat3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87B159E26B3EAF600F72399 /* CTMFloat3.swift */; };
 		B882D06426A912C800DEBEAC /* Conversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B882D06326A912C800DEBEAC /* Conversion.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +47,15 @@
 		B83FDD4326A58B08003A8FD0 /* Image3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Image3.jpg; sourceTree = "<group>"; };
 		B83FDD4A26A58C5E003A8FD0 /* downsample.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = downsample.metal; sourceTree = "<group>"; };
 		B83FDD4F26A66F66003A8FD0 /* ShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShaderTypes.h; sourceTree = "<group>"; };
+		B875DF8026AE8F9B000BE3F7 /* kloppenheim_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kloppenheim_06.png; sourceTree = "<group>"; };
+		B87B159426B3AAB000F72399 /* MemoryUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryUtility.swift; sourceTree = "<group>"; };
+		B87B159626B3E8AB00F72399 /* AAPLUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AAPLUtility.mm; sourceTree = "<group>"; };
+		B87B159726B3E8AB00F72399 /* AAPLUtility.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AAPLUtility.hpp; sourceTree = "<group>"; };
+		B87B159926B3E8C900F72399 /* AAPLMathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLMathUtilities.h; sourceTree = "<group>"; };
+		B87B159A26B3E8CA00F72399 /* AAPLMathUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLMathUtilities.m; sourceTree = "<group>"; };
+		B87B159C26B3E8DF00F72399 /* AAPLShaderTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AAPLShaderTypes.h; sourceTree = "<group>"; };
+		B87B159D26B3E8EC00F72399 /* UIOptionEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIOptionEnums.h; sourceTree = "<group>"; };
+		B87B159E26B3EAF600F72399 /* CTMFloat3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTMFloat3.swift; sourceTree = "<group>"; };
 		B882D01D26A6B7BB00DEBEAC /* MetalDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MetalDemo-Bridging-Header.h"; sourceTree = "<group>"; };
 		B882D06326A912C800DEBEAC /* Conversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversion.swift; sourceTree = "<group>"; };
 		B882D06526A930CB00DEBEAC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -92,13 +106,19 @@
 		B83FDD3A26A578EC003A8FD0 /* Metal */ = {
 			isa = PBXGroup;
 			children = (
-				B882D06326A912C800DEBEAC /* Conversion.swift */,
+				B87B15A026B3EB0300F72399 /* Utility */,
 				B83FDD4F26A66F66003A8FD0 /* ShaderTypes.h */,
 				B83FDD3B26A57A46003A8FD0 /* Render.swift */,
 				B83FDD4A26A58C5E003A8FD0 /* downsample.metal */,
 				B882D06526A930CB00DEBEAC /* README.md */,
 				B83FDD3D26A58B08003A8FD0 /* Images */,
 				B882D01D26A6B7BB00DEBEAC /* MetalDemo-Bridging-Header.h */,
+				B87B159C26B3E8DF00F72399 /* AAPLShaderTypes.h */,
+				B87B159D26B3E8EC00F72399 /* UIOptionEnums.h */,
+				B87B159726B3E8AB00F72399 /* AAPLUtility.hpp */,
+				B87B159626B3E8AB00F72399 /* AAPLUtility.mm */,
+				B87B159926B3E8C900F72399 /* AAPLMathUtilities.h */,
+				B87B159A26B3E8CA00F72399 /* AAPLMathUtilities.m */,
 			);
 			path = Metal;
 			sourceTree = "<group>";
@@ -112,8 +132,19 @@
 				B83FDD4326A58B08003A8FD0 /* Image3.jpg */,
 				B83FDD3E26A58B08003A8FD0 /* Image4.jpg */,
 				B83FDD3F26A58B08003A8FD0 /* Image5.jpg */,
+				B875DF8026AE8F9B000BE3F7 /* kloppenheim_06.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		B87B15A026B3EB0300F72399 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				B882D06326A912C800DEBEAC /* Conversion.swift */,
+				B87B159E26B3EAF600F72399 /* CTMFloat3.swift */,
+				B87B159426B3AAB000F72399 /* MemoryUtility.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B875DF8126AE8F9B000BE3F7 /* kloppenheim_06.png in Resources */,
 				B83FDD4726A58B08003A8FD0 /* Image0.jpg in Resources */,
 				B83FDD4626A58B08003A8FD0 /* Image1.jpg in Resources */,
 				B83FDD4826A58B08003A8FD0 /* Image2.jpg in Resources */,
@@ -193,6 +225,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B87B159826B3E8AB00F72399 /* AAPLUtility.mm in Sources */,
+				B87B159F26B3EAF600F72399 /* CTMFloat3.swift in Sources */,
+				B87B159B26B3E8CA00F72399 /* AAPLMathUtilities.m in Sources */,
+				B87B159526B3BE6500F72399 /* MemoryUtility.swift in Sources */,
 				B83FDD2B26A578CB003A8FD0 /* ViewController.swift in Sources */,
 				B882D06426A912C800DEBEAC /* Conversion.swift in Sources */,
 				B83FDD2726A578CB003A8FD0 /* AppDelegate.swift in Sources */,
@@ -357,7 +393,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.peng.MetalDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Metal/MetalDemo-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -380,6 +416,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.peng.MetalDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Metal/MetalDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

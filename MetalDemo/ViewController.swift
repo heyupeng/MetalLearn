@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         
         render = Render(mtkView: mtkview)
         mtkview.clearColor = MTLClearColor(red: 0.5, green: 0.5, blue: 0, alpha: 1)
-        mtkview.preferredFramesPerSecond = 25
+        mtkview.preferredFramesPerSecond = 40
     }
 
     @IBAction func switchAction(_ sender: UISwitch) {
@@ -28,37 +28,66 @@ class ViewController: UIViewController {
         
         switch index {
         case 0:
-            Render.Axis.xFlag = sender.isOn
+            Render.Axis.isOn.x = (sender.isOn ? 1: 0)
         case 1:
-            Render.Axis.yFlag = sender.isOn
+            Render.Axis.isOn.y = (sender.isOn ? 1: 0)
         case 2:
-            Render.Axis.zFlag = sender.isOn
+            Render.Axis.isOn.z = (sender.isOn ? 1: 0)
         case 3:
-            Render.Axis.xFlag = sender.isOn
-            Render.Axis.yFlag = sender.isOn
+            Render.Axis.isOn.x = (sender.isOn ? 1: 0)
+            Render.Axis.isOn.y = (sender.isOn ? 1: 0)
         case 4:
-            Render.Axis.xFlag = sender.isOn
-            Render.Axis.zFlag = sender.isOn
+            Render.Axis.isOn.x = (sender.isOn ? 1: 0)
+            Render.Axis.isOn.z = (sender.isOn ? 1: 0)
         case 5:
-            Render.Axis.yFlag = sender.isOn
-            Render.Axis.zFlag = sender.isOn
+            Render.Axis.isOn.y = (sender.isOn ? 1: 0)
+            Render.Axis.isOn.z = (sender.isOn ? 1: 0)
         case 6:
-            Render.Axis.xFlag = sender.isOn
-            Render.Axis.yFlag = sender.isOn
-            Render.Axis.zFlag = sender.isOn
+            Render.Axis.isOn.x = (sender.isOn ? 1: 0)
+            Render.Axis.isOn.y = (sender.isOn ? 1: 0)
+            Render.Axis.isOn.z = (sender.isOn ? 1: 0)
+            
+        case 10:
+            Render.Axis.isOnForSphere.x = (sender.isOn ? 1: 0)
+        case 11:
+            Render.Axis.isOnForSphere.y = (sender.isOn ? 1: 0)
+        case 12:
+            Render.Axis.isOnForSphere.z = (sender.isOn ? 1: 0)
+        case 13:
+            Render.Axis.isOnForSphere.x = (sender.isOn ? 1: 0)
+            Render.Axis.isOnForSphere.y = (sender.isOn ? 1: 0)
+        case 14:
+            Render.Axis.isOnForSphere.x = (sender.isOn ? 1: 0)
+            Render.Axis.isOnForSphere.z = (sender.isOn ? 1: 0)
+        case 15:
+            Render.Axis.isOnForSphere.y = (sender.isOn ? 1: 0)
+            Render.Axis.isOnForSphere.z = (sender.isOn ? 1: 0)
+        case 16:
+            Render.Axis.isOnForSphere.x = (sender.isOn ? 1: 0)
+            Render.Axis.isOnForSphere.y = (sender.isOn ? 1: 0)
+            Render.Axis.isOnForSphere.z = (sender.isOn ? 1: 0)
         default:
             break
         }
     }
     
     @IBAction func resetAction(_ sender: UIButton) {
-        Render.Axis.xFlag = false
-        Render.Axis.yFlag = false
-        Render.Axis.zFlag = false
-        
-        Render.Axis.x = 0
-        Render.Axis.y = 0
-        Render.Axis.z = 0
+        switch sender.tag {
+        case 0:
+            Render.Axis.isOn.x = 0
+            Render.Axis.isOn.y = 0
+            Render.Axis.isOn.z = 0
+            
+            Render.Axis.eye = simd_float3(0, 0, 0)
+        case 1:
+            Render.Axis.isOnForSphere.x = 0
+            Render.Axis.isOnForSphere.y = 0
+            Render.Axis.isOnForSphere.z = 0
+            
+            Render.Axis.sphere = simd_float3(0, 0, 0)
+        default:
+            break
+        }
     }
     
 }

@@ -3,3 +3,6 @@
 //
 
 #import "ShaderTypes.h"
+
+#import "AAPLUtility.hpp"
+#import "AAPLShaderTypes.h"
